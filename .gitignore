@@ -35,3 +35,6 @@ nbproject
 .idea
 node_modules
 dist
+
+# Compiled LESS files
+less/*.less.css
