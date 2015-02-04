@@ -67,6 +67,7 @@
           }
 
           that.$element
+            .addClass('bootstrap-modal')
             .addClass('in')
             .attr('aria-hidden', false)
 
@@ -98,6 +99,7 @@
 
         this.$element
           .removeClass('in')
+          .removeClass('bootstrap-modal')
           .attr('aria-hidden', true)
 
         $.support.transition && this.$element.hasClass('fade') ?
@@ -110,7 +112,7 @@
         $(document)
           .off('focusin.bs.modal') // guard against infinite focus loop
           .on('focusin.bs.modal', function (e) {
-          if (that.$element[0] !== e.target && !$(e.target).parents('.modal').length) {
+          if (that.$element[0] !== e.target && !$(e.target).parents('.bootstrap-modal').length) {
             that.$element.focus()
           }
         })
