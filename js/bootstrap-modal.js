@@ -163,8 +163,9 @@
         if (this.isShown && this.options.backdrop) {
           var doAnimate = $.support.transition && animate
 
+          var outerWrapper = document.querySelector("#outer-wrapper");
           this.$backdrop = $('<div class="modal-backdrop ' + animate + '" />')
-            .appendTo(document.body)
+            .appendTo(outerWrapper || document.body)
 
           this.$backdrop.click(
             this.options.backdrop == 'static' ?
